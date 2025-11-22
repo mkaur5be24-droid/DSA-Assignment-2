@@ -1,0 +1,20 @@
+(a) LINEAR TIME LOGIC
+Since the array is sorted and contains numbers from 1 to n, each element should satisfy
+arr[i] = i + 1
+in a complete array.
+Traverse the array from index 0 to n-2.
+For each index i:
+If arr[i] ≠ i + 1, then the missing number is i + 1.
+If no mismatch is found in the entire array, then the missing number is n (the last number).
+
+(b) LOGIC USING BINARY SEARCH
+Set low = 0, high = n − 2.
+While low ≤ high:
+Compute mid = (low + high) / 2.
+Check the expected value at mid: it should be mid + 1.
+If arr[mid] = mid + 1, the missing number is in the right half, so set
+low = mid + 1.
+Otherwise, the missing number is in the left half, so set
+high = mid − 1.
+When the loop ends, low will point to the index where the mismatch begins.
+The missing number is low + 1.
